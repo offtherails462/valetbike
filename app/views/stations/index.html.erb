@@ -1,14 +1,27 @@
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
     <div class="section-title">
-      Welcome to ValetBike!
-    </div>  
+      Just Change the HTML, Right?
+    </div>
+	Stations:
     <div class="flexbox vertical stretch">
       <% if @stations.present? %>
         <%= render(partial: "stations/row", collection: @stations, as: :station) %>
       <% else %>
       <div class="empty">
         No stations found.
+      </div>
+      <% end %>
+    </div>
+	Bikes:
+    <div class="flexbox vertical stretch">
+    <% if Bike.all.count > 0 %>
+        <% Bike.all.order(identifier: :asc).each do |bike| %>
+	  <br>---- Bike #<%= bike.identifier %>
+	<% end %>
+      <% else %>
+      <div class="empty">
+        No bikes found.
       </div>
       <% end %>
     </div>
