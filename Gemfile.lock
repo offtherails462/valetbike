@@ -60,9 +60,16 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    autoprefixer-rails (10.4.2.0)
+      execjs (~> 2)
+    bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.8.1)
       msgpack (~> 1.0)
+    bootstrap (5.1.3)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.9.3, < 3)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
     concurrent-ruby (1.1.9)
@@ -72,6 +79,7 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.10.0)
+    execjs (2.8.1)
     ffi (1.15.3)
     globalid (0.5.2)
       activesupport (>= 5.0)
@@ -102,10 +110,13 @@ GEM
     nokogiri (1.12.4)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    popper_js (2.9.3)
     puma (5.4.0)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
+    rack-proxy (0.7.2)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.1.4.1)
@@ -138,6 +149,15 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
+    semantic_range (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -146,6 +166,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     thor (1.1.0)
+    tilt (2.0.10)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     web-console (4.1.0)
@@ -153,6 +174,11 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
+    webpacker (5.4.3)
+      activesupport (>= 5.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 5.2)
+      semantic_range (>= 2.3.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -164,7 +190,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
+  bootstrap
   byebug
   dotenv-rails
   jbuilder (~> 2.7)
@@ -175,6 +203,7 @@ DEPENDENCIES
   rails (~> 6.1.4)
   tzinfo-data
   web-console (>= 4.1.0)
+  webpacker (~> 5.0)
 
 RUBY VERSION
    ruby 3.1.0p0

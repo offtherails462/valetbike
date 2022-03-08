@@ -1,0 +1,30 @@
+<h1>Sign up with ValetBike</h1>
+
+<p>
+  <%= form_with model: @user, url: signup_path do |f| %>
+  <p>
+    <%= f.label 'First name' %>
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label 'Last name' %>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label 'E-mail' %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label 'Password' %>
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label 'Confirm password' %>
+    <%= f.text_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.submit 'Sign up!' %>
+  </p>
+  <% end %>
+
+</p>

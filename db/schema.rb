@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_30_180952) do
+ActiveRecord::Schema.define(version: 2022_03_08_030728) do
 
   create_table "bikes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "identifier"
@@ -19,10 +19,26 @@ ActiveRecord::Schema.define(version: 2021_08_30_180952) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "currents", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "stations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "identifier"
     t.string "name"
     t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "password_digest"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "subscription_type"
+    t.boolean "admin?"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
