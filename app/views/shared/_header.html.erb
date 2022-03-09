@@ -1,3 +1,5 @@
+<!-- Partial ERB for the site navbar -->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
   <div class="container-fluid">
     <%= link_to("ValetBike", root_path, class: 'navbar-brand') %>
@@ -5,13 +7,28 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <!-- Main links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <%= link_to("About", '#', class: 'nav-item nav-link') %>
         <%= link_to("Map View", '#', class: 'nav-item nav-link') %>
         <%= link_to("Stations", stations_path, class: 'nav-item nav-link') %>
-        </li>
       </ul>
-      <ul class="navbar-nav">
+      <!-- User management section -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <span class="navbar-text" href="#">
+          Hello, <%= Current.user ? Current.user.first_name : 'guest' %>!
+        </span>
+        <% if Current.user %>
+          <%= link_to("Change password", edit_password_path, class: 'nav-item nav-link') %>
+          <%= link_to("Log out", logout_path, class: 'nav-item nav-link') %>
+        <% else %>
+          <%= link_to("Log in", login_path, class: 'nav-item nav-link') %>
+          <%= link_to("Sign up", signup_path, class: 'nav-item nav-link') %>
+        <% end %>
+      </ul>
+
+      <!-- WIP dropdown implementation -->
+      <!-- ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Hello, <%= Current.user ? Current.user.first_name : 'guest' %>!
@@ -26,7 +43,7 @@
             <% end %>
           </li>
         </li>
-      </ul>
+      </ul-->
     </div>
   </div>
 </nav>

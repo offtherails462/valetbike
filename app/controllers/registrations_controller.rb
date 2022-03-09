@@ -1,3 +1,4 @@
+# Controller handling creation of a new user based on params defined by form
 class RegistrationsController < ApplicationController
   def new
     @user = User.new

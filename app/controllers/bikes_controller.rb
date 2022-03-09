@@ -1,3 +1,4 @@
+# Controller handling adding, editing, deleting bikes
 class BikesController < ApplicationController
 
   def index
