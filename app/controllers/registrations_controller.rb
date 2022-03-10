@@ -7,6 +7,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      WelcomeMailer.with(user: @user).welcome_email.deliver_now
       session[:user_id] = @user.id
       redirect_to root_path, notice: 'Your ValetBike account has been created!'
     else
@@ -17,6 +18,6 @@ class RegistrationsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :first_name, :last_name, :password, :password_confirmation)
   end
 end

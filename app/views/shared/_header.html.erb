@@ -20,7 +20,7 @@
         </span>
         <% if Current.user %>
           <%= link_to("Change password", edit_password_path, class: 'nav-item nav-link') %>
-          <%= link_to("Log out", logout_path, class: 'nav-item nav-link') %>
+          <%= button_to("Log out", logout_path, method: :delete, class: 'nav-item nav-link') %>
         <% else %>
           <%= link_to("Log in", login_path, class: 'nav-item nav-link') %>
           <%= link_to("Sign up", signup_path, class: 'nav-item nav-link') %>
