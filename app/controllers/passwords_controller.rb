@@ -1,7 +1,9 @@
 class PasswordsController < ApplicationController
   before_action :require_user_logged_in!
 
-  def edit; end
+  def edit
+    @c_user = Current.user
+  end
 
   def update
     if Current.user.update(password_params)

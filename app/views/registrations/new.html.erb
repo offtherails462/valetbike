@@ -1,30 +1,10 @@
 <h1>Sign up with ValetBike</h1>
 
-<p>
-  <%= form_with model: @user, url: signup_path do |f| %>
-  <p>
-    <%= f.label 'First name' %>
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label 'Last name' %>
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label 'E-mail' %>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label 'Password' %>
-    <%= f.text_field :password %>
-  </p>
-  <p>
-    <%= f.label 'Confirm password' %>
-    <%= f.text_field :password_confirmation %>
-  </p>
-  <p>
-    <%= f.submit 'Sign up!' %>
-  </p>
-  <% end %>
-
-</p>
+<%= simple_form_for @user, url: signup_path do |f| %>
+  <%= f.input :first_name, label: 'First name' %>
+  <%= f.input :last_name, label: 'Last name' %>
+  <%= f.input :email, label: 'Email' %>
+  <%= f.input :password, label: 'Password' %>
+  <%= f.input :password_confirmation, label: 'Re-enter password' %>
+  <%= f.button :submit, 'Create account!', class: 'btn btn-primary' %>
+<% end %>

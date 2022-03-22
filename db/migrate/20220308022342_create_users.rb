@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :first_name
       t.string :last_name
       t.integer :subscription_type
-      t.boolean :admin?
+      t.boolean :admin?, default: false
 
       t.timestamps
     end
