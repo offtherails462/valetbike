@@ -1,8 +1,19 @@
 class StationsController < ApplicationController
-  
+  helper_method :sort_column, :sort_direction
   def index
-    @stations = Station.all.order(identifier: :asc)
+    @stations = Station.all.order(sort_column + ' ' + sort_direction)
+    @bikes = Bike.all.order(identifier: :asc)
   end
+
+  private
+  def sort_column
+    params[:sort] || "name"
+  end
+  
+  def sort_direction
+    params[:direction] || "asc"
+  end
+
   
   
 end
