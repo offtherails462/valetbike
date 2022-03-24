@@ -1,0 +1,10 @@
+<h1>Sign up with ValetBike</h1>
+
+<%= simple_form_for @user, url: signup_path do |f| %>
+  <%= f.input :first_name, label: 'First name' %>
+  <%= f.input :last_name, label: 'Last name' %>
+  <%= f.input :email, label: 'Email' %>
+  <%= f.input :password, label: 'Password' %>
+  <%= f.input :password_confirmation, label: 'Re-enter password' %>
+  <%= f.button :submit, 'Create account!', class: 'btn btn-primary' %>
+<% end %>

@@ -3,19 +3,27 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet" type="text/css">
+
     <link href="/favicon.ico" rel="icon" type="image/x-icon">
     <title>ValetBike</title>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
   </head>
   <body>
+    <%= render('shared/header') %>
     <div id="site-container" class="flexbox vertical stretch flex-1">
-      <div class="d-flex">
-        
-        <%= yield %>
+
+      <div class="flexbox vertical center">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <div class="container">
+          <%= yield %>
+        </div>
+
       </div>
     </div>
   </body>
