@@ -1,0 +1,14 @@
+<h1>Reset your ValetBike password?</h1>
+<%= form_with model @user, url: password_reset_edit_path(token: params[:token]) do |f| %>
+  <p>
+    <%= f.label 'Password' %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label 'Confirm password:' %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.submit 'Update Password' %>
+  </p>
+<% end %>
