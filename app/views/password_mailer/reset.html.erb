@@ -1,0 +1,5 @@
+Hi <%= params[:user].email %>,<br>
+ValetBike team here,<br>
+Someone requested a password reset.<br>
+Click the link above if you recognise this activity. Note that this token expires in 15 minutes.
+<%= link_to 'Reset Password', password_reset_edit_url(token: @token) %>

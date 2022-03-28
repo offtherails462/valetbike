@@ -1,0 +1,25 @@
+                         Prefix Verb   URI Pattern                                                                                       Controller#Action
+                           root GET    /                                                                                                 stations#index
+                   new_stations GET    /stations/new(.:format)                                                                           stations#new
+                  edit_stations GET    /stations/edit(.:format)                                                                          stations#edit
+                       stations GET    /stations(.:format)                                                                               stations#show
+                                PATCH  /stations(.:format)                                                                               stations#update
+                                PUT    /stations(.:format)                                                                               stations#update
+                                DELETE /stations(.:format)                                                                               stations#destroy
+                                POST   /stations(.:format)                                                                               stations#create
+                      new_bikes GET    /bikes/new(.:format)                                                                              bikes#new
+                     edit_bikes GET    /bikes/edit(.:format)                                                                             bikes#edit
+                          bikes GET    /bikes(.:format)                                                                                  bikes#show
+                                PATCH  /bikes(.:format)                                                                                  bikes#update
+                                PUT    /bikes(.:format)                                                                                  bikes#update
+                                DELETE /bikes(.:format)                                                                                  bikes#destroy
+                                POST   /bikes(.:format)                                                                                  bikes#create
+             rails_service_blob GET    /rails/active_storage/blobs/redirect/:signed_id/*filename(.:format)                               active_storage/blobs/redirect#show
+       rails_service_blob_proxy GET    /rails/active_storage/blobs/proxy/:signed_id/*filename(.:format)                                  active_storage/blobs/proxy#show
+                                GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                                        active_storage/blobs/redirect#show
+      rails_blob_representation GET    /rails/active_storage/representations/redirect/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations/redirect#show
+rails_blob_representation_proxy GET    /rails/active_storage/representations/proxy/:signed_blob_id/:variation_key/*filename(.:format)    active_storage/representations/proxy#show
+                                GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format)          active_storage/representations/redirect#show
+             rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                                       active_storage/disk#show
+      update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                               active_storage/disk#update
+           rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                                    active_storage/direct_uploads#create

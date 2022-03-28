@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+      <h1>Welcome to ValetBike, <%= @user.first_name %></h1>
+      <p>
+        You have successfully signed created a ValetBike account, and 
+        your user email is: <%= @user.email %>.<br>
+      </p>
+      <p>
+        To login to the site, just follow this link: <%= @url %>.
+      </p>
+      <p>Thank you for joining the ValetBike community!</p>
+    </body>
+  </html>
