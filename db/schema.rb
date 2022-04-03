@@ -10,11 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 2022_03_29_022948) do
 
-ActiveRecord::Schema.define(version: 2022_03_08_030728) do
-
-
-  create_table "bikes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "bikes", charset: "utf8mb4", collation: "utf8mb4_unicode_520_ci", force: :cascade do |t|
     t.integer "identifier"
     t.integer "current_station_id"
     t.datetime "created_at", precision: 6, null: false
@@ -22,12 +20,12 @@ ActiveRecord::Schema.define(version: 2022_03_08_030728) do
     t.integer "station_id"
   end
 
-  create_table "currents", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "currents", charset: "utf8mb4", collation: "utf8mb4_unicode_520_ci", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "stations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "stations", charset: "utf8mb4", collation: "utf8mb4_unicode_520_ci", force: :cascade do |t|
     t.integer "identifier"
     t.string "name"
     t.string "address"
@@ -37,9 +35,11 @@ ActiveRecord::Schema.define(version: 2022_03_08_030728) do
     t.integer "needs_maintenance"
     t.integer "dock_count"
     t.integer "docked_bike_count"
+    t.float "latitude"
+    t.float "longitude"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_unicode_520_ci", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest"
     t.string "first_name"

@@ -1,17 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en">
+
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
-    <div class="section-title">
-      ValetBike
-    </div>
-
     <div class="d-flex">
-      Sort by
-     
-      <%= sortable "name"  %> 
-      <%= sortable "docked_bike_count"%> 
-      <%= sortable "Identifier"%> 
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+    <a class="navbar-brand">Sort by</a>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+      <button type="button" class="btn btn-outline-info"><%= sortable "name" %></button>
+      <button type="button" class="btn btn-outline-info"><%= sortable "docked_bike_count"%></button>
+      <button type="button" class="btn btn-outline-info"><%= sortable "Identifier"%></button>
+      </div>
+      <a class="navbar-brand"> </a>
+      <form class="d-flex justify-content-between" action = "/search">
+      <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-info" type="submit">Search</button>
+      </form>
+      </div>
+      </nav>
+
+      
+      
       <%= yield %>
       </div>
+    
+   
 	Stations:
     <div class="flexbox vertical stretch">
       <% if @stations.present? %>

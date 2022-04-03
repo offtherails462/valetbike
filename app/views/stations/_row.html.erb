@@ -1,4 +1,6 @@
+
 <div class="record-row <%= cycle "odd", "even", name: "row-cycler" %> flexbox vertical stretch">
+
   <%station.docked_bike_count = Bike.where(:current_station_id => station.identifier).all.count%>
   <%station.save%>
   <%= station.identifier %>: <%= station.name %> (<%= station.address %>)<br>Docked Bikes (<%= station.docked_bike_count %>):

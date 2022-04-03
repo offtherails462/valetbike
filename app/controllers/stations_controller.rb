@@ -7,6 +7,10 @@ class StationsController < ApplicationController
     @bikes = Bike.all.order(identifier: :asc)
   end
 
+  def search
+    @stations = Station.where("name LIKE ?", "%" + params[:q] + "%")
+  end
+
   private
   def sort_column
     params[:sort] || "name"
