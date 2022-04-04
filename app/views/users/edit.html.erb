@@ -13,7 +13,12 @@
   <!-- Update User Information -->
   <div class="details tab-content">
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-    
+      <%= simple_form_for Current.user, url: users_edit_path do |f| %>
+        <%= f.input :first_name, label: 'First name' %>
+        <%= f.input :last_name, label: 'Last name' %>
+        <%= f.input :email, label: 'Email' %>
+        <%= f.button :submit, 'Submit', class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 </div>
