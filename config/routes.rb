@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'users/edit'
+  get 'users', to: 'users#edit', as: 'edit_users'
+  get 'map/index'
+  get 'pricing/index'
+  get 'how_it_works/index'
   get 'home/index'
   root to: "home#index"
 

@@ -68,6 +68,8 @@ gem 'dotenv-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'net-smtp'
 gem 'simple_form'
+gem 'bootstrap', '~> 4.1.1'
+gem 'font-awesome-rails'
 
 # Suggested Potentially Useful Gems
 # gem 'devise'
