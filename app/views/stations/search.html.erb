@@ -1,0 +1,12 @@
+<button type="button" class="btn btn-outline-info"><%= link_to "Back",stations_path, class: "link" %></button>
+<h1> Search Result </h1>
+Stations:
+    <div class="flexbox vertical stretch">
+      <% if @stations.present? %>
+        <%= render(partial: "stations/row", collection: @stations, as: :station) %>
+      <% else %>
+      <div class="empty">
+        No stations found.
+      </div>
+      <% end %>
+    </div>

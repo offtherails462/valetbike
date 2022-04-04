@@ -68,6 +68,9 @@ gem 'dotenv-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'net-smtp'
 gem 'simple_form'
+gem 'geocoder', '~> 1.3'
+gem 'geokit-rails'
+gem 'rexml'
 
 # Suggested Potentially Useful Gems
 # gem 'devise'
