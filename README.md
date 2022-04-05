@@ -3,16 +3,30 @@
 Smith College CSC223: Software Engineering
 Group B ValetBike Project
 
-## Instruction to populate database and run
+## Run instructions:
+### Setup .env
+* If not already created, create a file called '.env' in the valetbike root directory. The file structure should look like:
+MYSQL_USERNAME=<USERNAME> (replace <USERNAME> with db username)
+MYSQL_PASSWORD=<PASSWORD> (replace <PASSWORD> with db password)
+MYSQL_SOCKET=/tmp/mysql.sock (or your OS's MySQL socket file location)
+  
+### Make sure all gems and yarn dependencies are installed
+* yarn
+* bundle install
+
+### Populate database
+* rake db:migrate
 * rake import_stations_csv:import_stations
 * rake import_bikes_csv:import_bikes
-* rake db:migrate
+
+### Run
 * rails s
 
-## Changes to .env and Gemfile
+## Changes to Gemfile
 * Changed rails version to 3.1.0
 * gem 'geocoder', '~> 1.3'
 * gem 'geokit-rails'
+
 
 ## Description of the Protype's functionality
 * User can sign-up, log-in and remain logged in on the navbar.
