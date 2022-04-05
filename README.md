@@ -3,7 +3,9 @@
 Smith College CSC223: Software Engineering
 Group B ValetBike Project
 
-## Instruction to populate userbase
+## Instruction to populate database
+* rake import_stations_csv:import_stations
+* rake import_bikes_csv:import_bikes
 * rake db:migrate
 
 ## Changes to .env and Gemfile
