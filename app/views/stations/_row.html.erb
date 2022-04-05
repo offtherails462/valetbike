@@ -1,8 +1,14 @@
+
 <div class="record-row <%= cycle "odd", "even", name: "row-cycler" %> flexbox vertical stretch">
-  <%= station.identifier %>: <%= station.name %> (<%= station.address %>)<br>Docked Bikes (<%= station.docked_bikes.count %>):
-<% if station.docked_bikes.present? %>
-        <% station.docked_bikes.each do |bike| %>
-	  <br>---- Bike #<%= bike.identifier %>
+
+  <%station.docked_bike_count = Bike.where(:current_station_id => station.identifier).all.count%>
+  <%station.save%>
+  <%= station.identifier %>: <%= station.name %> (<%= station.address %>)<br>Docked Bikes (<%= station.docked_bike_count %>):
+<% if Bike.where(:current_station_id => station.identifier).present? %>
+        <% Bike.where(:current_station_id => station.identifier).all.each do |bike| %>
+          
+	  <br>---- Bike <%= bike.identifier%>
+    
 	<% end %>
       <% else %>
       <div class="empty">
