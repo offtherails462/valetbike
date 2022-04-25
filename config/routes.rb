@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get 'footer/contact'
-  get 'footer/faq'
+
   get 'footer/about'
-  # get 'users/edit'
   get 'map/index'
   get 'how_it_works/index'
   get 'home/index'
@@ -23,7 +21,7 @@ Rails.application.routes.draw do
   patch 'users/edit', to: 'users#update'
 
   get 'users/view', to: 'users#view', as: 'users_view'
-  
+
   get 'users/rides', to: 'users#rides', as: 'users_rides'
 
   get 'password/reset', to: 'password_resets#new'

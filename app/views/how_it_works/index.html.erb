@@ -1,13 +1,15 @@
-<div class="site-container">
+<div id="site-container">
   <header>
     <div class="header-content">
       <h1>A Unique Way to Experience Pioneer Valley</h1>
       <div class="line"></div>
-      <h2>Use ValetBike as a form of wellness whilst experiencing the beauty of the valley.</h2>
+      <h3>Use ValetBike as a form of wellness whilst experiencing the beauty of the valley.</h3>
     </div>
   </header>
   <div class="content">
     <div class="how-to-use">
+      <h2>How to Use ValetBike</h2>
+      <div class="line"></div>
       <div class="row">
         <div class="col">
           <div class="card">
@@ -55,7 +57,7 @@
       <div class="line"></div>
       <div class="why-content">
         <section class="why-item">
-          <div class="item-image">
+          <div class="item-image item-1">
             <%= image_tag "save-money.png", :width => "95%"%>
           </div>
           <div class="item-details">
@@ -64,17 +66,17 @@
             <%= button_to "Become a Member", "/checkout", class: 'nav-item btn btn-outline-primary'%>
           </div>
         </section>
-        <section class="why-item">
+        <section class="why-item item-2">
+          <div class="item-image">
+            <%= image_tag "exercise.png", :width => "95%"%>
+          </div>
           <div class="item-details">
             <h3>Exercise</h3>
             <p>Get your daily exercise session in using ValetBike! Even if it's only for a short distance, using a bike will ultimately improve your health outcomes.</p>
             <%= button_to "Find a Bike", "/checkout", class: 'nav-item btn btn-outline-primary' %>
           </div>
-          <div class="item-image">
-            <%= image_tag "exercise.png", :width => "95%"%>
-          </div>
         </section>
-        <section class="why-item">
+        <section class="why-item item-1">
           <div class="item-image">
             <%= image_tag "have-fun.png", :width => "95%"%>
           </div>
@@ -84,14 +86,14 @@
             <%= button_to "Try it Out", "/checkout", class: 'nav-item btn btn-outline-primary' %>
           </div>
         </section>
-        <section class="why-item">
+        <section class="why-item item-2">
+          <div class="item-image">
+            <%= image_tag "environment-friendly.png", :width => "95%"%>
+          </div>
           <div class="item-details">
             <h3>Enviromentally Friendly</h3>
             <p>Reduce your carbon footprint by choosing to use ValetBike. It's good for both you and the environment!</p>
             <%= button_to "Learn More", "/checkout",  class: 'nav-item btn btn-outline-primary'%>
-          </div>
-          <div class="item-image">
-            <%= image_tag "environment-friendly.png", :width => "95%"%>
           </div>
         </section>
       </div>

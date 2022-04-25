@@ -9,15 +9,11 @@
   box-sizing: border-box;
 }
 
-.container {
-  width: 100vw;
-}
-
 //Header Content styles
-header {
+.header-content {
   width: 100vw;
   height: 100vh;
-  background-image: image-url('pioneer-valley.jpg');
+  background-image: image-url('riding-bike.jpg');
   background-position: bottom;
   background-size: cover;
   display: flex;
@@ -26,31 +22,25 @@ header {
 }
 
 .header-content {
-  margin-top: 200px;
-  width: 60%;
   color: whitesmoke;
   padding-left: 2rem;
+  justify-content: center;
 }
 
 .header-content h2 {
-  font-size: 4vmin;
-}
-
-.header-content h1 {
-  font-size: 8vmin;
-  margin-top: 50px;
+  font-weight: lighter;
+  margin-bottom: 30px;
 }
 
 h1 {
-  font-size: 100px;
   line-height: 1;
 }
 
 .line {
   width: 30%;
   height: 4px;
-  background: black;
-  margin: 10px 0;
+  background: white;
+  margin: 30px 0;
   border-radius: 5px;
 }
 
@@ -59,26 +49,32 @@ h1 {
 .how-to-use {
   width: 100vw;
   margin: 20px 0;
-  display: flex;
-  justify-content: center;
+}
+
+.how-to-use .line {
+  width: 20%;
+  margin: 10px auto;
+  margin-bottom: 3vh;
+  background: black;
+}
+
+.how-to-use h2 {
+  text-align: center;
+  padding-top: 2rem;
 }
 
 .row {
-  display: flex;
-  width: 95%;
+  flex-direction: row;
+  width: 100%;
   margin-left: 2px;
-  justify-content: space-between;
+  padding-right: 0;
+  justify-content: center;
 }
 
 .row .col {
   width: 100%;
-  display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-h4 {
-  font-size: 3vmin;
 }
 
 .card {
@@ -90,7 +86,6 @@ h4 {
 }
 
 p {
-  font-size: 2vmin;
   margin: 10px 0;
 }
 
@@ -98,36 +93,42 @@ p {
 .why-valet {
   width: 100vw;
   background-color: #dbe9f4;
+  padding-bottom: 2rem;
 }
 
 .why-valet h2 {
-  font-size: 6vmin;
   text-align: center;
   padding-top: 2rem;
 }
 
 .why-content {
+  display: flex;
+  flex-direction: column;
   margin: 20px auto;
-  width: 80%;
+  max-width: 40em;
 }
 
 .item-image {
-  width: 100%;
+  max-width: 40em;
 }
 
 .why-valet .line {
-  width: 50%;
-  height: 4px;
+  width: 20%;
+  margin: 3vh auto;
   background: black;
-  margin: 10px auto;
-  border-radius: 5px;
 }
 
 .why-item {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 40px;
-  padding: 2rem 4rem;
+  display: flex;
+  margin-top: 50px;
+}
+
+.item-1 {
+  flex-direction: row;
+}
+
+.item-2{
+  flex-direction: row-reverse;
 }
 
 .item-details {
@@ -144,14 +145,26 @@ p {
   margin: 20px 0;
 }
 
+.item-details .btn {
+  border-radius: 15px;
+}
+
 //Closing line
 .closing {
   width: 100vw;
   margin-bottom: 20px;
-  padding: 0 2rem;
+  padding: 2rem;
 }
 
 .closing h2 {
   text-align: center;
   font-size: 5vmin;
+}
+
+@media (max-width: 600){
+ .row {
+   flex-direction: column;
+   margin-right: 10vw;
+   margin-left: 10vw;
+ }
 }

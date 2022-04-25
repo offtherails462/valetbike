@@ -13,7 +13,7 @@
     <!-- Update User Information -->
     <div class="details tab-content">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-        <h1>Account Information</h1>
+        <h3>Account Information</h3>
         <%= simple_form_for @c_user, url: users_edit_path, html: {class: 'form-inline'} do |f| %>
         <div class="form-input">
           <%= f.input :first_name, label: 'First Name', class: 'form-control' %>

@@ -1,100 +1,81 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- CSS style to put div side by side -->
-    <style type="text/css">
-    .container {
-        width:600px;
-        height:190px;
-        background-color:white;
-        padding-top:20px;
-        padding-left:15px;
-        padding-right:15px;
-    }
-    #st-box {
-        float:left;
-        width:180px;
-        height:160px;
-        background-color:white;
-        border:solid black;
-    }
-    #nd-box {
-        float:left;
-        width:180px;
-        height:160px;
-        background-color:white;
-        border:solid black;
-        margin-left:20px;
-    }
-    #rd-box {
-        float:right;
-        width:180px;
-        height:160px;
-        background-color:white;
-        border:solid black;
-    }
-    h1 {
-        color:black;
-    }
-    </style>
-</head>
+<!-- CSS style to put div side by side -->
+<style type="text/css">
 
-<body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <center>
-        <h1 style="color:black;">
-            Enjoy the ride!
-        </h1>
+  #st-box {
+    float:left;
+    width:100%;
+    background-color:white;
+    border:solid black;
+  }
+  #nd-box {
+    float:left;
+    width:100%;
+    background-color:white;
+    border:solid black;
+    margin-left:20px;
+  }
+  #rd-box {
+    float:right;
+    width:100%;
+    background-color:white;
+    border:solid black;
+  }
+  h1 {
+    color:black;
+  }
+</style>
 
-        <p>Find and rent an electric bike to explore the Pioneer Valley.</p>
-        <div>
-            <!-- Google Map Copied Code -->
-            <iframe src=
-            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d377337.08908262354!2d-72.92044538060067!3d42.36498990171473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e1188266beb0df%3A0xd3a4e0c69d6588a5!2sPioneer%20Valley%2C%20MA!5e0!3m2!1sen!2sus!4v1649028214320!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    width="400"
-                    height="300"
-                    frameborder="0"
-                    style="border:0;"
-                    allowfullscreen=""
-                    aria-hidden="false"
-                    tabindex="0">
-            </iframe>
-          <h3>HOW IT WORKS...</h3>
-        </div>
-        </center>
-        <center>
-        <div class="container">
-            <div id="st-box">
-              <h2 style="color:black;">
-                  FIND
-              </h2>
-              <p>
-                  Find a station near you and select your desired bike.
-              </p>
-            </div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<center>
+  <h1 style="color:black;">
+    Enjoy the ride!
+  </h1>
 
-            <div id="nd-box">
-              <h2 style="color:black;">
-                  RENT
-              </h2>
-                <p>
-                    Input your trip details using the rent a bike feature (online or from the app).
-                </p>
-            </div>
-            <div id="rd-box">
-              <h2 style="color:black;">
-                  RIDE
-              </h2>
-              <p>
-                  Once the bike is unlocked, enjoy the ride!
-              </p>
-            </div>
-        </div>
-        <!-- <%# <%= image_tag "bikePlans.jpg", :width => "1200"%> %> -->
-        <br>
-        <%= link_to "Select a plan now!", "/checkout" %>
-    </center>
-</body>
+  <p>Find and rent an electric bike to explore the Pioneer Valley.</p>
+  <div>
+    <!-- Google Map Copied Code -->
+    <iframe src=
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d377337.08908262354!2d-72.92044538060067!3d42.36498990171473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e1188266beb0df%3A0xd3a4e0c69d6588a5!2sPioneer%20Valley%2C%20MA!5e0!3m2!1sen!2sus!4v1649028214320!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    width="100%"
+    frameborder="0"
+    style="border:0;"
+    allowfullscreen=""
+    aria-hidden="false"
+    tabindex="0">
+  </iframe>
+  <h3>HOW IT WORKS...</h3>
+</div>
+</center>
+<center>
+  <div class="container">
+    <div id="st-box">
+      <h2 style="color:black;">
+        FIND
+      </h2>
+      <p>
+        Find a station near you and select your desired bike.
+      </p>
+    </div>
 
-</html>
+    <div id="nd-box">
+      <h2 style="color:black;">
+        RENT
+      </h2>
+      <p>
+        Input your trip details using the rent a bike feature (online or from the app).
+      </p>
+    </div>
+    <div id="rd-box">
+      <h2 style="color:black;">
+        RIDE
+      </h2>
+      <p>
+        Once the bike is unlocked, enjoy the ride!
+      </p>
+    </div>
+  </div>
+  <!-- <%# <%= image_tag "bikePlans.jpg", :width => "1200"%> %> -->
+  <br>
+  <%= link_to "Select a plan now!", "/checkout" %>
+</center>
