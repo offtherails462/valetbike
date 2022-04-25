@@ -28,9 +28,11 @@ Rails.application.routes.draw do
 
   get 'stations', to: 'stations#index'
 
-  get 'checkout', to: 'checkouts#show'
-  post 'checkout', to: 'home#index'
 
   #resource :stations
   #resource :bikes
+
+  get 'pricing', to: 'checkouts#pricing'
+  post 'pricing', to: 'home#index'
+  
 end
