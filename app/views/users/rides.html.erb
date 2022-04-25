@@ -4,28 +4,19 @@
       <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
         <!-- <a class="nav-link" data-toggle="pill" href="/users/edit">Edit Information</a> -->
         <%= link_to("Account Information", users_edit_path, class: 'nav-item nav-link') %>
-        <a class="nav-link active" data-toggle="pill" href = "#v-pills-home" role="tab" aria-selected="true">Change Password</a>
+        <%= link_to("Change Password", edit_password_path, class: 'nav-item nav-link') %>
         <%= link_to("View Subscription Plan", users_view_path, class: 'nav-item nav-link') %>
-        <%= link_to("Ride History", users_rides_path, class: 'nav-item nav-link') %>
+        <a class="nav-link active" data-toggle="pill" href = "#v-pills-home" role="tab" aria-selected="true">Ride History</a>
         <a class="nav-link" data-toggle="pill">Privacy and Security</a>
       </div>
     </div>
-    <!-- Update User Password Form -->
+    <!-- Update/View user's membership plan -->
     <div class="details tab-content">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-        <h3>Edit Password</h3>
-        <%= simple_form_for @c_user, url: edit_password_path do |f| %>
-        <div class="form-input">
-          <%= f.input :password, label: 'New password' %>
+        <div class="container-2">
+          <h3>Ride History</h3>
+          <p>You currently have not completed trips.</p>
         </div>
-        <div class="form-input">
-          <%= f.input :password_confirmation, label: 'Re-enter new password' %>
-        </div>
-        <div class="form-button">
-            <%= f.button :submit, 'Change password', class: 'btn btn-primary' %>
-        </div>
-
-        <% end %>
       </div>
     </div>
   </div>
