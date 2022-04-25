@@ -32,7 +32,6 @@ Rails.application.routes.draw do
   #resource :stations
   #resource :bikes
 
-  get 'pricing', to: 'checkouts#pricing'
-  post 'pricing', to: 'home#index'
+  get 'checkouts', to: 'checkouts#index'
   
 end
