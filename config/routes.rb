@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'students/rents'
   # get 'users/edit'
   get 'map/index'
   get 'how_it_works/index'
@@ -24,13 +25,20 @@ Rails.application.routes.draw do
 
   get 'password/reset/edit', to: 'password_resets#edit'
   patch 'password/reset/edit', to: 'password_resets#update'
-  get 'search', to: 'stations#search'
+  
+  get 'rent', to: 'rents#new'
+  get 'return', to: 'rents#edit'
+  post 'rent', to: 'rents#create', as: 'rent_create'
+  patch 'rent.:id', to: 'rents#update', as: 'return_update'
+  get 'rentrecord', to: 'rents#index'
 
   get 'stations', to: 'stations#index'
+  get 'search', to: 'stations#search'
 
   get 'checkout', to: 'checkouts#show'
   post 'checkout', to: 'home#index'
 
+  resource :rents
   #resource :stations
   #resource :bikes
 end

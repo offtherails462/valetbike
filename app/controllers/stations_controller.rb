@@ -1,7 +1,6 @@
 class StationsController < ApplicationController
   helper_method :sort_column, :sort_direction
   def index
-
     require_user_logged_in!
     @stations = Station.all.order(sort_column + ' ' + sort_direction)
     @bikes = Bike.all.order(identifier: :asc)
@@ -20,6 +19,12 @@ class StationsController < ApplicationController
     params[:direction] || "asc"
 
   end
+
+  def new 
+    @stations = Station.new
+  end
+
+  
 
   
   

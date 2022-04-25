@@ -1,0 +1,16 @@
+<button type="button" class="btn btn-outline-info"><%= link_to "Back",stations_path, class: "link" %></button>
+<h1> Your Rent Record: </h1>
+
+<div class="flexbox vertical stretch">
+      <% if @rent_records.present? %>
+        <%= render(partial: "rents/row", collection: @rent_records, as: :rent) %>
+      <% else %>
+      <div class="empty">
+        No records found.
+      </div>
+      <% end %>
+</div>
+
+
+
+</div>
