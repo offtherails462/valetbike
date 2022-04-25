@@ -1,0 +1,20 @@
+// Place all the styles related to the footer controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+footer {
+  padding: 1rem;
+  background-color: #212529;
+  text-align: center;
+  color: white;
+}
+
+.contact-list {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+li .contact-list {
+  padding: 15px;
+  display: inline-block;
+}

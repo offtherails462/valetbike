@@ -2,3 +2,46 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+.login-form {
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid silver;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+.login-form h1 {
+  font-size: 4vmin;
+  text-align: center;
+  padding: 0 0 20px 0;
+  margin-top: 30px;
+  border-bottom: 1px solid silver;
+}
+
+.login-form .form{
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.txt-field {
+  width: 100%;
+  border: 1px solid silver;
+  border-radius: 5px;
+  height: 35px;
+}
+
+.form-lbl {
+  width: 100%;
+  font-size: 2vmin;
+}
+
+.txt-field:hover {
+  text-decoration: underline;
+}
+
+.link-txt {
+  text-decoration: none;
+}

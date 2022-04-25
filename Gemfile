@@ -72,6 +72,7 @@ gem 'font-awesome-rails'
 gem 'geocoder', '~> 1.3'
 gem 'geokit-rails'
 gem 'rexml'
+gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 
 # Suggested Potentially Useful Gems

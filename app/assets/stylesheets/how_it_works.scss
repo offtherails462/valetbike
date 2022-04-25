@@ -1,3 +1,157 @@
 // Place all the styles related to the how-it-works controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// Global Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+}
+
+//Header Content styles
+header {
+  width: 100vw;
+  height: 100vh;
+  background-image: image-url('pioneer-valley.jpg');
+  background-position: bottom;
+  background-size: cover;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+.header-content {
+  margin-top: 200px;
+  width: 60%;
+  color: whitesmoke;
+  padding-left: 2rem;
+}
+
+.header-content h2 {
+  font-size: 4vmin;
+}
+
+.header-content h1 {
+  font-size: 8vmin;
+  margin-top: 50px;
+}
+
+h1 {
+  font-size: 100px;
+  line-height: 1;
+}
+
+.line {
+  width: 30%;
+  height: 4px;
+  background: black;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+
+//How to Use section
+.how-to-use {
+  width: 100vw;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  width: 95%;
+  margin-left: 2px;
+  justify-content: space-between;
+}
+
+.row .col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h4 {
+  font-size: 3vmin;
+}
+
+.card {
+  border: none;
+}
+
+.card-text {
+  width: 100%
+}
+
+p {
+  font-size: 2vmin;
+  margin: 10px 0;
+}
+
+//Why ValetBike section
+.why-valet {
+  width: 100vw;
+  background-color: #dbe9f4;
+}
+
+.why-valet h2 {
+  font-size: 6vmin;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.why-content {
+  margin: 20px auto;
+  width: 80%;
+}
+
+.item-image {
+  width: 100%;
+}
+
+.why-valet .line {
+  width: 50%;
+  height: 4px;
+  background: black;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.why-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  padding: 2rem 4rem;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-details h3 {
+  padding: 0;
+}
+
+.item-details p {
+  margin: 20px 0;
+}
+
+//Closing line
+.closing {
+  width: 100vw;
+  margin-bottom: 20px;
+  padding: 0 2rem;
+}
+
+.closing h2 {
+  text-align: center;
+  font-size: 5vmin;
+}

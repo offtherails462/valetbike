@@ -1,14 +1,18 @@
-<h1>Reset your ValetBike password?</h1>
-<%= form_with model @user, url: password_reset_edit_path(token: params[:token]) do |f| %>
-  <p>
-    <%= f.label 'Password' %>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label 'Confirm password:' %>
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p>
-    <%= f.submit 'Update Password' %>
-  </p>
-<% end %>
+<div class="reset-form">
+  <h1>Reset your ValetBike password?</h1>
+  <div class="form">
+    <%= form_with model @user, url: password_reset_edit_path(token: params[:token]) do |f| %>
+      <p class='form-field'>
+        <%= f.label 'Password', class: 'form-lbl' %>
+        <%= f.password_field :password, class: 'txt-field' %>
+      </p>
+      <p class='form-field'>
+        <%= f.label 'Confirm password:', class: 'form-lbl' %>
+        <%= f.password_field :password_confirmation, class: 'txt-field' %>
+      </p>
+      <p class='form-button'>
+        <%= f.submit 'Update Password' %>
+      </p>
+    <% end %>
+  </div>
+</div>

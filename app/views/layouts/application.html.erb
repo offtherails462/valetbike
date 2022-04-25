@@ -19,12 +19,7 @@
     <%= render('shared/header') %>
     <div id="site-container" class="flexbox vertical stretch flex-1" style="min-height: 700px;">
       <div class="flexbox vertical center">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <div class="container">
-          <%= yield %>
-        </div>
-
+        <%= yield %>
       </div>
     </div>
     <%= render('shared/footer') %>

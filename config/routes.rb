@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'footer/contact'
+  get 'footer/faq'
+  get 'footer/about'
   # get 'users/edit'
   get 'map/index'
   get 'how_it_works/index'
@@ -16,8 +19,12 @@ Rails.application.routes.draw do
   get 'password', to: 'passwords#edit', as: 'edit_password'
   patch 'password', to: 'passwords#update'
 
-  get 'users', to: 'users#edit', as: 'users_edit'
-  patch 'users', to: 'users#update'
+  get 'users/edit', to: 'users#edit', as: 'users_edit'
+  patch 'users/edit', to: 'users#update'
+
+  get 'users/view', to: 'users#view', as: 'users_view'
+  
+  get 'users/rides', to: 'users#rides', as: 'users_rides'
 
   get 'password/reset', to: 'password_resets#new'
   post 'password/reset', to: 'password_resets#create'
@@ -29,7 +36,7 @@ Rails.application.routes.draw do
   get 'stations', to: 'stations#index'
 
   get 'checkout', to: 'checkouts#show'
-  post 'checkout', to: 'home#index'
+  post 'checkout', to: 'checkouts#show'
 
   #resource :stations
   #resource :bikes

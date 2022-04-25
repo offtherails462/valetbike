@@ -40,6 +40,8 @@
 </head>
 
 <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <center>
         <h1 style="color:black;">
             Enjoy the ride!
@@ -89,7 +91,7 @@
               </p>
             </div>
         </div>
-        <%= image_tag "bikePlans.jpg", :width => "1200"%>
+        <!-- <%# <%= image_tag "bikePlans.jpg", :width => "1200"%> %> -->
         <br>
         <%= link_to "Select a plan now!", "/checkout" %>
     </center>
