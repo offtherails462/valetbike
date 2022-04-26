@@ -1,12 +1,33 @@
-<!-- Partial ERB for the site navbar -->
+<style media="screen">
+  .navbar-collapse {
+    backgound-color: #f8f9fa;
+  }
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+  .nav-item {
+    text-size: 12pt;
+  }
+
+  .navbar.navbar-custom .navbar-toggle {
+    border-color: transparent;
+  }
+  @media (max-width: 767px) {
+    .navbar.navbar-custom .navbar-collapse,
+    .navbar.navbar-custom .navbar-form {
+      border-color: rgb(222, 145, 139);
+      background-color: #212529;
+      opacity: 1;
+    }
+  }
+</style>
+
+<!-- Partial ERB for the site navbar -->
+<nav class="navbar fixed-top navbar-custom navbar-expand-lg bg-dark navbar-dark p-md-3 shadow">
   <div class="container-fluid">
     <%= link_to("ValetBike", root_path, class: 'navbar-brand') %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse" id="navbarNav">
       <!-- Main links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -19,6 +40,7 @@
           <%= link_to("Find a Bike", stations_path, class: 'nav-item nav-link') %>
         </li>
       </ul>
+
       <!-- User management section -->
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <span class="navbar-text" href="#">
@@ -31,7 +53,7 @@
           <li>
             <%= link_to("Edit Profile", users_edit_path, class: 'nav-item nav-link') %>
           </li>
-          <li>
+          <li class="nav-item">
             <%= button_to("Log out", logout_path, method: :delete, class: 'nav-item btn btn-primary') %>
           </li>
         <% else %>
@@ -44,24 +66,17 @@
         <% end %>
       </ul>
 
-      <!-- WIP dropdown implementation -->
-      <!-- ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="btn btn-secondary dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Hello, <%= Current.user ? Current.user.first_name : 'guest' %>!
-          </a>
-          <li class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <% if Current.user %>
-              <%= link_to("Change password", edit_password_path, class: 'dropdown-item') %>
-              <%= link_to("Log out", logout_path, class: 'dropdown-item') %>
-              <%= link_to("Edit Profile", users_edit_path, class: 'dropdown-item') %>
-            <% else %>
-              <%= link_to("Log in", login_path, class: 'dropdown-item') %>
-              <%= link_to("Sign up", signup_path, class: 'dropdown-item') %>
-            <% end %>
-          </li>
-        </li>
-      </ul-->
+      <!-- Javascript code to make dropdown for navbar accessible -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+      <!-- Javascript code to get navbar to have a white backgound when scrolling -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function(){
+          navbar_height = document.querySelector('.navbar').offsetHeight; //get the offset height
+          document.body.style.paddingTop = navbar_height + 'px'; // Add the offset height to the top padding
+        });
+      </script>
+
     </div>
   </div>
 </nav>

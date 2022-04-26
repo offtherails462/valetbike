@@ -77,11 +77,4 @@ gem 'stripe', '~> 5.5.0'
 gem 'friendly_id'
 gem 'sidekiq'
 gem 'name_of_person'
-# gem 'sqlite3'
-
-# Suggested Potentially Useful Gems
-# gem 'devise'
-# gem 'httparty'
-# gem 'paperclip
-# gem 'uniquify'
-# gem 'will_paginate'
+gem 'jquery-rails'

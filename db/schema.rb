@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_25_213319) do
+ActiveRecord::Schema.define(version: 2022_04_11_212127) do
 
   create_table "bikes", charset: "utf8mb4", collation: "utf8mb4_unicode_520_ci", force: :cascade do |t|
     t.integer "identifier"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2022_04_25_213319) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
+  
   create_table "pay_charges", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_520_ci", force: :cascade do |t|
     t.string "owner_type"
     t.integer "owner_id"
@@ -61,6 +61,14 @@ ActiveRecord::Schema.define(version: 2022_04_25_213319) do
     t.json "data"
     t.decimal "application_fee_percent", precision: 8, scale: 2
     t.index ["processor", "processor_id"], name: "index_pay_subscriptions_on_processor_and_processor_id", unique: true
+  end
+  create_table "rents", charset: "utf8mb4", collation: "utf8mb4_unicode_520_ci", force: :cascade do |t|
+    t.integer "bike_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "origin_station_id"
+    t.integer "destination_station_id"
+    t.string "user_email"
   end
 
   create_table "stations", charset: "utf8mb4", collation: "utf8mb4_unicode_520_ci", force: :cascade do |t|
