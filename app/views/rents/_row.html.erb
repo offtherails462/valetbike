@@ -1,0 +1,18 @@
+<div class="record-row <%= cycle "odd", "even", name: "row-cycler" %> flexbox vertical stretch">
+  ---Bike <%= rent.bike_id %>:
+    <% @station_origin = Station.where(:identifier => rent.origin_station_id).first.name%>
+    
+    <% if Station.where(:identifier => rent.destination_station_id).first.present? %>
+    <% @station_destination = Station.where(:identifier => rent.destination_station_id).first.name%> 
+    <%@return_time = rent.updated_at %>
+    <% else %>
+    <% @station_destination = "[ You have not returned this bike ]"%> 
+    <%@return_time = "Not returned" %>
+    <% end %>
+    
+    
+  <br>Checked out at: <%= @station_origin%>
+  <br>Returned to: <%= @station_destination%> 
+  <br>Rented at: <%= rent.created_at %> 
+  <br>Returned at: <%= @return_time %>
+</div>

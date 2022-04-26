@@ -73,7 +73,8 @@ gem 'geocoder', '~> 1.3'
 gem 'geokit-rails'
 gem 'rexml'
 gem 'jquery-rails'
-
+gem 'simple_form'
+gem 'jquery-rails'
 # Suggested Potentially Useful Gems
 # gem 'devise'
 # gem 'httparty'

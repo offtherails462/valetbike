@@ -1,2 +1,105 @@
-<h1>HowItWorks#index</h1>
-<p>Find me in app/views/how_it_works/index.html.erb</p>
+<div id="site-container">
+  <header>
+    <div class="header-content">
+      <h1>A Unique Way to Experience Pioneer Valley</h1>
+      <div class="line"></div>
+      <h3>Use ValetBike as a form of wellness whilst experiencing the beauty of the valley.</h3>
+    </div>
+  </header>
+  <div class="content">
+    <div class="how-to-use">
+      <h2>How to Use ValetBike</h2>
+      <div class="line"></div>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <span class="card-img-top">
+              <%= image_tag 'join.png', :width => "100%"%>
+            </span>
+            <!-- <img src="../../assets/images/join.png" class="card-img-top" alt="..."> -->
+            <div class="card-body">
+              <h4 class="card-title">Join</h4>
+              <p class="card-text">Become a member by purchasing a membership plan on the website.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <%= image_tag 'unlock.png', :width => "100%"%>
+            <div class="card-body">
+              <h4 class="card-title">Unlock</h4>
+              <p class="card-text">Find a station near you, select your desired bike and unlock it using your membership code.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <%= image_tag 'ride.png', :width => "100%"%>
+            <div class="card-body">
+              <h4 class="card-title">Ride</h4>
+              <p class="card-text">Take as many rides as you want while your pass or membership is active.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <%= image_tag 'return.png', :width => "100%"%>
+            <div class="card-body">
+              <h4 class="card-title">Return</h4>
+              <p class="card-text">Dock your bike at any station. Listen for the sound to confirm that it has been secured and check the bike screen for the "docked bike" indication to appear.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-valet">
+      <h2>Why ValetBike?</h2>
+      <div class="line"></div>
+      <div class="why-content">
+        <section class="why-item">
+          <div class="item-image item-1">
+            <%= image_tag "save-money.png", :width => "95%"%>
+          </div>
+          <div class="item-details">
+            <h3>Save Money</h3>
+            <p>Whether your a student or someone who enjoys commutting using a bike, ValetBike has the best plans for you to commute at a pocket friendly price.</p>
+            <%= button_to "Become a Member", "/checkout", class: 'nav-item btn btn-outline-primary'%>
+          </div>
+        </section>
+        <section class="why-item item-2">
+          <div class="item-image">
+            <%= image_tag "exercise.png", :width => "95%"%>
+          </div>
+          <div class="item-details">
+            <h3>Exercise</h3>
+            <p>Get your daily exercise session in using ValetBike! Even if it's only for a short distance, using a bike will ultimately improve your health outcomes.</p>
+            <%= button_to "Find a Bike", "/checkout", class: 'nav-item btn btn-outline-primary' %>
+          </div>
+        </section>
+        <section class="why-item item-1">
+          <div class="item-image">
+            <%= image_tag "have-fun.png", :width => "95%"%>
+          </div>
+          <div class="item-details">
+            <h3>Have Fun</h3>
+            <p>Whether you're riding alone or with friends and family, we're sure that ValetBike will help you get to your destination with a smile!</p>
+            <%= button_to "Try it Out", "/checkout", class: 'nav-item btn btn-outline-primary' %>
+          </div>
+        </section>
+        <section class="why-item item-2">
+          <div class="item-image">
+            <%= image_tag "environment-friendly.png", :width => "95%"%>
+          </div>
+          <div class="item-details">
+            <h3>Enviromentally Friendly</h3>
+            <p>Reduce your carbon footprint by choosing to use ValetBike. It's good for both you and the environment!</p>
+            <%= button_to "Learn More", "/checkout",  class: 'nav-item btn btn-outline-primary'%>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="closing">
+      <h2>ValetBike is a fun and affordable commutting option for all, we hope you enjoy the ride!</h2>
+    </div>
+  </div>
+</div>
