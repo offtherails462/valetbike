@@ -7,6 +7,22 @@ body{
   padding: 0;
 }
 
+.header-info {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('pioneervalley.jpg');
+  background-position: bottom;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-info {
+  color: whitesmoke;
+  padding-left: 2rem;
+}
+
 .container{
   position: relative;
   width: 1200px;
@@ -14,19 +30,46 @@ body{
   margin: 240px auto;
 }
 
-.container .box{
+.works-section {
+  width: 100vw;
+  margin: 20px 0;
+}
+
+.line-2 {
+  width: 20%;
+  height: 4px;
+  background: black;
+  margin: 50px 0;
+  border-radius: 5px;
+}
+
+.bottom-lnk {
+  margin-bottom: 50px;
+}
+
+.payment-section .row {
+  width: 95%;
+}
+
+.row .col {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.row .box{
   position: relative;
   width: calc(400px - 30px);
   height: calc(300px - 30px);
   background: #ffff;
   float: left;
-  margin: 15px;
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 10px;
 }
 
-.container .box .icon{
+.row .box .icon{
   position: absolute;
   top: 0;
   left: 0;
@@ -37,7 +80,7 @@ body{
   z-index: 1;
 }
 
-.container .box:hover .icon{
+.row .box:hover .icon{
   top: 20px;
   left: calc(50% - 40px);
   width: 80px;
@@ -45,7 +88,7 @@ body{
   border-radius: 50%;
 }
 
-.container .box .icon .img{
+.row .box .icon .img{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -55,13 +98,13 @@ body{
   color: #ffff;
 }
 
-.container .box:hover .icon{
+.row .box:hover .icon{
   font-size: 40px;
   transform: scale(.3);
   transition: 0.5s;
 }
 
-.container .box .content{
+.row .box .content{
   position: absolute;
   top: 100%;
   height: calc(100% - 100px);
@@ -71,18 +114,18 @@ body{
   transition: 0.5s;
 }
 
-.container .box:hover .content {
+.row .box:hover .content {
   top: 100px;
 }
 
-.container .box .content h3{
+.row .box .content h3{
   margin: 0 0 10px;
   padding: 0;
   color: #fff;
   font-size: 24px;
 }
 
-.container .box .content p{
+.row .box .content p{
   margin: 0;
   padding: 0;
   color: #fff;
