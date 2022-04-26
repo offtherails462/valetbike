@@ -26,8 +26,17 @@ MYSQL_SOCKET=/tmp/mysql.sock (or your OS's MySQL socket file location)
 
 ## Changes to Gemfile
 * Changed rails version to 3.1.0
+* `gem 'simple_form'`
+* `gem 'font-awesome-rails'`
 * `gem 'geocoder', '~> 1.3'`
 * `gem 'geokit-rails'`
+* `gem 'jquery-rails'`
+* `gem 'rexml'`
+* `gem 'mini_magick', '~> 4.8'`
+* `gem 'stripe', '~> 5.5.0'`
+* `gem 'friendly_id'`
+* `gem 'sidekiq'`
+* `gem 'name_of_person`
 * `gem 'jquery-rails'`
 
 
@@ -66,3 +75,4 @@ MYSQL_SOCKET=/tmp/mysql.sock (or your OS's MySQL socket file location)
 * The user can then rent and return bikes from and to the stations. The user can also view their rent records. 
 * User can edit their information including name, email, and password
 
+# MVP
