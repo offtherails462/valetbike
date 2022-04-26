@@ -2,38 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// .user-edit-page{
-//   display: flex;
-//   margin-top: 60px;
-//   min-height: 500px;
-//
-//   .actions{
-//     width: 220px;
-//     border: 1px solid #dbdbdb;
-//
-//     .nav-link{
-//       font-size: 14px;
-//       background-color: white;
-//       color: black;
-//       border-radius: 0;
-//       padding: 12px 0 12px 30px;
-//       &:hover{
-//         cursor: pointer;
-//       }
-//     }
-//
-//     .nav-pills .nav-link.active{
-//       border-left: 2px solid;
-//       font-weight: 600;
-//     }
-//   }
-//
-//   .details{
-//     flex: 1;
-//     border: 1px solid #dbdbdb;
-//     border-left: none;
-//   }
-// }
+//Global
+.user-edit-page #site-container {
+  background-color: #212529;
+}
+
+.edit-profile-form {
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.edit-profile-form h3 {
+  text-align: center;
+  padding: 0 0 20px 0;
+  margin-top: 30px;
+  border-bottom: 1px solid silver;
+}
+
+.form-input {
+  width: 100%;
+  padding: 5px;
+}
+
+.form-control {
+  position: relative;
+  border: 1px solid silver;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+}
 
 .profile .avatar{
   .wrapper{
@@ -145,9 +147,11 @@
 
 /*  Edit Profile page */
 .user-edit-page{
+  background-color: white;
+  border-radius: 25px;
   display: flex;
-  margin-top: 60px;
-  min-height: 600px;
+  margin: auto;
+  min-height: 400px;
 
   .actions{
     width: 220px;
@@ -171,7 +175,9 @@
   .details{
     flex: 1;
     border: 1px solid #dbdbdb;
-    border-left:none;
+    border-left: none;
+    padding: 0 40px;
+    box-sizing: border-box;
   }
 }
 

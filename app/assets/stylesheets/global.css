@@ -14,6 +14,8 @@ html, body {
 
 body {
   font-size: 12pt;
+  font-family: "Open Sans", sans-serif;
+  font-stretch:ultra-condensed;
   -webkit-text-size-adjust:none;
   -moz-text-size-adjust:none;
   -ms-text-size-adjust:none;
@@ -28,8 +30,46 @@ body {
   height: 100%;
   height: auto !important;
   min-height: 100%;
+  font-family: inherit;
   font-family: var(--body-font);
   font-weight: 400;
   color: var(--black-color);
   background: var(--white-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Archivo', sans-serif;
+ font-weight: 500;
+}
+
+p, label {
+  font-family: "Quicksand", serif;
+  font-weight: 300;
+}
+
+.btn, .input-field {
+  font-family: "Quicksand", serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 8vmin;
+}
+
+h2 {
+  font-size: 6vmin;
+}
+
+h3 {
+  font-size: 4vmin
+}
+
+h4 {
+  font-size: 3vmin;
+}
+
+@media (max-width: 600) {
+  h1, h2, h3, h4 {
+    font-size: 8vmin;
+  }
 }

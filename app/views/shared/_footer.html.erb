@@ -1,9 +1,29 @@
 <!-- Footer -->
+<style>
+  .footer-txt {
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+  }
+</style>
 <footer class="page-footer font-small blue">
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">
-    <a class="nav-link" href="/"> About Us </a>
-    <p>© 2022 Copyright</p>
+  <div class="footer">
+    <ul class="list-unstyled contact-list">
+      <li>
+        <%= link_to("Overview", how_it_works_index_path, class: 'nav-item nav-link') %>
+      </li>
+      <li>
+        <%= link_to("Pricing", checkout_path, class: 'nav-item nav-link') %>
+      </li>
+      <li>
+        <%= link_to("Find a Bike", stations_path, class: 'nav-item nav-link') %>
+      </li>
+      <li>
+        <%= link_to("About Us", footer_about_path, class: 'nav-item nav-link') %>
+      </li>
+    </ul>
+    <p class="footer-txt">1 Chapin Way, Northampton, Massachusetts</p>
+    <p class="footer-txt">Copyright 2022Ⓒ</p>
   </div>
   <!-- Copyright -->
 </footer>

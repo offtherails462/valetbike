@@ -1,0 +1,24 @@
+<button type="button" class="btn btn-outline-info"><%= link_to "Back",stations_path, class: "link" %></button>
+<h1> We hope you had a nice ride!!</h1>
+<%= form_for @rented_bike do |f| %>
+        <div class="control-group">
+        <%= f.label "Choose the station you picked this bike from:", class: 'control-label'%>
+        <div class="controls">
+            <%= f.select(:origin_station_id, Station.all.map{|s| [s.name,s.identifier]}, id: "station_select")%>
+        </div> 
+        <br></br>
+        <%= f.label "Choose the Station you want to return the bike to:", class: 'control-label'%>
+        <div class="controls">
+        <%= f.select(:destination_station_id, Station.all.map{|s| [s.name,s.identifier]})%>
+        </div> 
+        <br></br>
+        <div class="control-group">
+        <%= f.label "Enter the identifier of the bike you want to return:", class: 'control-label'%>
+        <div class="controls">
+        <%= f.number_field :bike_id, in: 1000..10000, step: 1 , id: "bikes_select"%>
+        </div>
+        <br></br>
+        <div class="controls">
+        <button class="btn btn-outline-info" type="submit">Return!!</button>
+        </div>
+<% end %>
