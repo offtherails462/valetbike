@@ -66,3 +66,4 @@ MYSQL_SOCKET=/tmp/mysql.sock (or your OS's MySQL socket file location)
 * The user can then rent and return bikes from and to the stations. The user can also view their rent records. 
 * User can edit their information including name, email, and password
 
+# MVP
