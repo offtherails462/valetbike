@@ -1,2 +1,58 @@
-<h1>Map#index</h1>
-<p>Find me in app/views/map/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""></script>
+    <!-- CSS style to put in map -->
+    <style>
+        #map { height: 400px; }
+    </style>
+  </head>
+
+  <body>
+<h1> Start your journey... </h1>
+<div id="map"></div>
+<script>
+  var map = L.map('map').setView([42.3228185,-72.6438844],13);
+  L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=R0y6cP5VOaMfbpZfxCiO', {
+    attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+  }).addTo(map);
+  var marker = L.marker([42.3320418,-72.6561618]).addTo(map); // 51 Locust Street, Northampton, MA
+  marker.bindPopup("<center><b> Cooley Dickinson Health Care </b><br> 51 Locust Street, Northampton, MA. <img src='https://www.cooleydickinson.org/wp-content/uploads/2016/08/CDH-Main.jpg' width='280' height='180'/></center>");
+  var marker = L.marker([42.3355856,-72.6741883]).addTo(map); // 19 Meadow Street, Florence, MA
+  marker.bindPopup("<center><b> Florence Bank Station </b><br> 19 Meadow Street, Florence, MA at Lilly Library. <img src='https://images.squarespace-cdn.com/content/v1/5ab512a32487fd55e3c2559c/1533238117074-4PZLLYVT4XR6MOMIIH9P/Northampton_lilly_library_IMG_7396_537x367.jpg?format=1000w' width='280' height='180'/></center>");
+  var marker = L.marker([42.3350461,-72.6680099]).addTo(map); // 31 Main Street, Florence, MA
+  marker.bindPopup("<center><b> Florence Center </b><br> 31 Main Street, Florence, MA. <img src='https://images.squarespace-cdn.com/content/v1/58e90ba46a49638159c46f56/1546107153088-58MP0SP6IL5KURQKT6V7/storefront.jpg?format=2500w' width='280' height='180'/></center>");
+  var marker = L.marker([42.3166597,-72.6357673]).addTo(map); // 20 West Street, Northampton, MA
+  marker.bindPopup("<center><b> Forbes Library </b><br> 20 West Street, Northampton, MA. <img src='https://images.squarespace-cdn.com/content/v1/600b78bfc202056f9b8f4abd/1616240449924-CG733SGI4UIO8PFNIJ3C/IMG_1861.JPG' width='280' height='180'/></center>");
+  var marker = L.marker([42.3373461,-72.6421998]).addTo(map); // 7A-7D Jackson Street, Northampton, MA
+  marker.bindPopup("<center><b> Jackson Street </b><br> 7A-7D Jackson Street, Northampton, MA. <img src='https://www.gazettenet.com/getattachment/27b35699-b71d-4858-ab51-0b7aba1dbb2d/Jackson-Garden-hg-100517-ph10' width='280' height='180'/></center>");
+  var marker = L.marker([42.3194444,-72.6380556]).addTo(map); // 1 Chapin Way, Northampton, MA at John M. Greene Hall
+  marker.bindPopup("<center><b> John M Greene Hall at Smith College </b><br> 1 Chapin Way, Northampton, MA at John M. Greene Hall. <img src='https://www.smith.edu/sites/default/files/styles/news_header/public/media/-news/John-m-greene-bike-station-gatecrop.jpg?itok=uJFv8DN7' width='280' height='180'/></center>");
+  var marker = L.marker([42.3204713,-72.6280986]).addTo(map); // 1 Bridge Street, Northampton, MA
+  marker.bindPopup("<center><b> Main Street/Bridge Street </b><br> 1 Bridge Street, Northampton, MA. <img src='https://planning-org-uploaded-media.s3.amazonaws.com/legacy_resources/greatplaces/streets/2007/img/mainstreet02.jpg' width='280' height='180'/></center>");
+  var marker = L.marker([42.319515,-72.6305933]).addTo(map); // 99 Main Street, Northampton, MA
+  marker.bindPopup("<center><b> Main Street/Court House </b><br> 99 Main Street, Northampton, MA. <img src='https://live.staticflickr.com/65535/49159389127_51df0e62ef_b.jpg' width='280' height='180'/></center>");
+  var marker = L.marker([42.3240528,-72.6518025]).addTo(map); // 380 Elm Street, Northampton, MA
+  marker.bindPopup("<center><b> Northampton High School </b><br> 380 Elm Street, Northampton, MA. <img src='https://upload.wikimedia.org/wikipedia/commons/8/8e/Hamphigh.JPG' width='280' height='180'/></center>");
+  var marker = L.marker([42.3188531,-72.6264399]).addTo(map); // Northampton Train Station
+  marker.bindPopup("<center><b> Northampton Train Station </b><br> Northampton Train Station. <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/First_Northbound_Vermonter_arriving_in_Northampton.jpg/220px-First_Northbound_Vermonter_arriving_in_Northampton.jpg' width='280' height='180'/></center>");
+  var marker = L.marker([42.3173188,-72.6330417]).addTo(map); // 274 Main Street, Northampton, MA at Pulaski Park
+  marker.bindPopup("<center><b> Pulaski Park/Downtown </b><br> 274 Main Street, Northampton, MA at Pulaski Park. <img src='https://images.squarespace-cdn.com/content/v1/5b02fe5ca9e028b65539cd7e/1531486339718-XLRZKHJIKAH62K19F59Z/Pulaski+Park+18+ND.jpg?format=2500w' width='280' height='180'/></center>");
+  var marker = L.marker([42.3282125,-72.6355312]).addTo(map); // State Street/Mass Central Rail Trail
+  marker.bindPopup("<center><b> State St/Mass Central Rail Trail </b><br> State Street/Mass Central Rail Trail. <img src='https://cloudfront.traillink.com/photos/mass-central-rail-trail_75161_sc.jpg' width='280' height='180'/></center>");
+  var marker = L.marker([42.3111151,-72.6487522]).addTo(map); // Village Hill/State Hospital
+  marker.bindPopup("<center><b> Village Hill/State Hospital </b><br> Village Hill/State Hospital. <img src='https://cdngeneral.rentcafe.com/dmslivecafe/3/490850/IMG_9424.jpg?width=850&mode=pad&bgcolor=333333&quality=80' width='280' height='180'/></center>");
+  var marker = L.marker([42.3288196,-72.6483784]).addTo(map); // YMCA/Childs Park
+  marker.bindPopup("<center><b> YMCA/Childs Park </b><br> YMCA/Childs Park. <img src='https://1.bp.blogspot.com/-yqKE447D5hw/YMfpLidi3hI/AAAAAAAAg0I/a4lZD8HgVQwWNR9pFocOjMYlDIqMkMiAACLcBGAsYHQ/s2048/childspark.jpg' width='280' height='180'/></center>");
+</script>
+
+</body>
+
+</html>

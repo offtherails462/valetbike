@@ -1,0 +1,3 @@
+require 'stripe'
+
+Stripe.api_key = 'sk_test_51Kg0EHGvSMIZGmmsyQwUspPyBAW0KPhpAbY3wCmRCjc7A9hzwMhMNcCDVECYxyd0ITZf5ffnRZwEh4sKfXpU9XIS008wh2K6Il'

@@ -1,98 +1,262 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- CSS style to put div side by side -->
-    <style type="text/css">
-    .container {
-        width:600px;
-        height:190px;
-        background-color:white;
-        padding-top:20px;
-        padding-left:15px;
-        padding-right:15px;
-    }
-    #st-box {
-        float:left;
-        width:180px;
-        height:160px;
-        background-color:white;
-        border:solid black;
-    }
-    #nd-box {
-        float:left;
-        width:180px;
-        height:160px;
-        background-color:white;
-        border:solid black;
-        margin-left:20px;
-    }
-    #rd-box {
-        float:right;
-        width:180px;
-        height:160px;
-        background-color:white;
-        border:solid black;
-    }
-    h1 {
-        color:black;
-    }
+    <link rel="stylesheet" type="text/css" href="home.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""></script>
+
+    <!-- CSS style to put in map -->
+    <style>
+        #map { height: 400px; }
     </style>
+
+    <!-- CSS style for Dosis font -->
+    <style>
+    body { font-family: 'Dosis'; font-size: 22px;}
+    </style>
+
 </head>
 
 <body>
-    <center>
-        <h1 style="color:black;">
-            Enjoy the ride!
+        <h1 style="color:black; font-family: 'Dosis'; text-align:center;">
+            <em>Enjoy the ride</em>
         </h1>
 
-        <p>Find and rent an electric bike to explore the Pioneer Valley.</p>
-        <div>
-            <!-- Google Map Copied Code -->
-            <iframe src=
-            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d377337.08908262354!2d-72.92044538060067!3d42.36498990171473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e1188266beb0df%3A0xd3a4e0c69d6588a5!2sPioneer%20Valley%2C%20MA!5e0!3m2!1sen!2sus!4v1649028214320!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    width="400"
-                    height="300"
-                    frameborder="0"
-                    style="border:0;"
-                    allowfullscreen=""
-                    aria-hidden="false"
-                    tabindex="0">
-            </iframe>
-          <h3>HOW IT WORKS...</h3>
-        </div>
-        </center>
-        <center>
-        <div class="container">
-            <div id="st-box">
-              <h2 style="color:black;">
-                  FIND
+        <p style="color:black; font-family: 'Dosis';">Find and rent an electric bike to explore the Pioneer Valley.</p>
+        <div id="map"></div>
+        <script>
+          var map = L.map('map').setView([42.3228185,-72.6438844],13);
+          L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=R0y6cP5VOaMfbpZfxCiO', {
+            attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+          }).addTo(map);
+          var marker = L.marker([42.3320418,-72.6561618]).addTo(map); // 51 Locust Street, Northampton, MA
+          marker.bindPopup("<center><b> Cooley Dickinson Health Care </b><br> 51 Locust Street, Northampton, MA. <img src='https://www.cooleydickinson.org/wp-content/uploads/2016/08/CDH-Main.jpg' width='280' height='180'/></center>");
+          var marker = L.marker([42.3355856,-72.6741883]).addTo(map); // 19 Meadow Street, Florence, MA
+          marker.bindPopup("<center><b> Florence Bank Station </b><br> 19 Meadow Street, Florence, MA at Lilly Library. <img src='https://images.squarespace-cdn.com/content/v1/5ab512a32487fd55e3c2559c/1533238117074-4PZLLYVT4XR6MOMIIH9P/Northampton_lilly_library_IMG_7396_537x367.jpg?format=1000w' width='280' height='180'/></center>");
+          var marker = L.marker([42.3350461,-72.6680099]).addTo(map); // 31 Main Street, Florence, MA
+          marker.bindPopup("<center><b> Florence Center </b><br> 31 Main Street, Florence, MA. <img src='https://images.squarespace-cdn.com/content/v1/58e90ba46a49638159c46f56/1546107153088-58MP0SP6IL5KURQKT6V7/storefront.jpg?format=2500w' width='280' height='180'/></center>");
+          var marker = L.marker([42.3166597,-72.6357673]).addTo(map); // 20 West Street, Northampton, MA
+          marker.bindPopup("<center><b> Forbes Library </b><br> 20 West Street, Northampton, MA. <img src='https://images.squarespace-cdn.com/content/v1/600b78bfc202056f9b8f4abd/1616240449924-CG733SGI4UIO8PFNIJ3C/IMG_1861.JPG' width='280' height='180'/></center>");
+          var marker = L.marker([42.3373461,-72.6421998]).addTo(map); // 7A-7D Jackson Street, Northampton, MA
+          marker.bindPopup("<center><b> Jackson Street </b><br> 7A-7D Jackson Street, Northampton, MA. <img src='https://www.gazettenet.com/getattachment/27b35699-b71d-4858-ab51-0b7aba1dbb2d/Jackson-Garden-hg-100517-ph10' width='280' height='180'/></center>");
+          var marker = L.marker([42.3194444,-72.6380556]).addTo(map); // 1 Chapin Way, Northampton, MA at John M. Greene Hall
+          marker.bindPopup("<center><b> John M Greene Hall at Smith College </b><br> 1 Chapin Way, Northampton, MA at John M. Greene Hall. <img src='https://www.smith.edu/sites/default/files/styles/news_header/public/media/-news/John-m-greene-bike-station-gatecrop.jpg?itok=uJFv8DN7' width='280' height='180'/></center>");
+          var marker = L.marker([42.3204713,-72.6280986]).addTo(map); // 1 Bridge Street, Northampton, MA
+          marker.bindPopup("<center><b> Main Street/Bridge Street </b><br> 1 Bridge Street, Northampton, MA. <img src='https://planning-org-uploaded-media.s3.amazonaws.com/legacy_resources/greatplaces/streets/2007/img/mainstreet02.jpg' width='280' height='180'/></center>");
+          var marker = L.marker([42.319515,-72.6305933]).addTo(map); // 99 Main Street, Northampton, MA
+          marker.bindPopup("<center><b> Main Street/Court House </b><br> 99 Main Street, Northampton, MA. <img src='https://live.staticflickr.com/65535/49159389127_51df0e62ef_b.jpg' width='280' height='180'/></center>");
+          var marker = L.marker([42.3240528,-72.6518025]).addTo(map); // 380 Elm Street, Northampton, MA
+          marker.bindPopup("<center><b> Northampton High School </b><br> 380 Elm Street, Northampton, MA. <img src='https://upload.wikimedia.org/wikipedia/commons/8/8e/Hamphigh.JPG' width='280' height='180'/></center>");
+          var marker = L.marker([42.3188531,-72.6264399]).addTo(map); // Northampton Train Station
+          marker.bindPopup("<center><b> Northampton Train Station </b><br> Northampton Train Station. <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/First_Northbound_Vermonter_arriving_in_Northampton.jpg/220px-First_Northbound_Vermonter_arriving_in_Northampton.jpg' width='280' height='180'/></center>");
+          var marker = L.marker([42.3173188,-72.6330417]).addTo(map); // 274 Main Street, Northampton, MA at Pulaski Park
+          marker.bindPopup("<center><b> Pulaski Park/Downtown </b><br> 274 Main Street, Northampton, MA at Pulaski Park. <img src='https://images.squarespace-cdn.com/content/v1/5b02fe5ca9e028b65539cd7e/1531486339718-XLRZKHJIKAH62K19F59Z/Pulaski+Park+18+ND.jpg?format=2500w' width='280' height='180'/></center>");
+          var marker = L.marker([42.3282125,-72.6355312]).addTo(map); // State Street/Mass Central Rail Trail
+          marker.bindPopup("<center><b> State St/Mass Central Rail Trail </b><br> State Street/Mass Central Rail Trail. <img src='https://cloudfront.traillink.com/photos/mass-central-rail-trail_75161_sc.jpg' width='280' height='180'/></center>");
+          var marker = L.marker([42.3111151,-72.6487522]).addTo(map); // Village Hill/State Hospital
+          marker.bindPopup("<center><b> Village Hill/State Hospital </b><br> Village Hill/State Hospital. <img src='https://cdngeneral.rentcafe.com/dmslivecafe/3/490850/IMG_9424.jpg?width=850&mode=pad&bgcolor=333333&quality=80' width='280' height='180'/></center>");
+          var marker = L.marker([42.3288196,-72.6483784]).addTo(map); // YMCA/Childs Park
+          marker.bindPopup("<center><b> YMCA/Childs Park </b><br> YMCA/Childs Park. <img src='https://1.bp.blogspot.com/-yqKE447D5hw/YMfpLidi3hI/AAAAAAAAg0I/a4lZD8HgVQwWNR9pFocOjMYlDIqMkMiAACLcBGAsYHQ/s2048/childspark.jpg' width='280' height='180'/></center>");
+        </script>
+
+        <h3 style="color:black; font-family: 'Dosis'; text-align:center;">
+          <strong>HOW IT WORKS...</strong>
+        </h3>
+
+            <div>
+              <center>
+              <%= image_tag "maps.png", :width => "100", :height => "100"%>
+              </center>
+              <h2 style="color:black; font-family: 'Dosis'; text-align:center;">
+                  <strong>FIND</strong>
               </h2>
-              <p>
+              <p style="color:black; font-family: 'Dosis'; text-align:center;">
                   Find a station near you and select your desired bike.
               </p>
             </div>
 
-            <div id="nd-box">
-              <h2 style="color:black;">
-                  RENT
+            <div>
+              <center>
+              <%= image_tag "bike-rent.png", :width => "100", :height => "100"%>
+              </center>
+              <h2 style="color:black; font-family: 'Dosis'; text-align:center;">
+                  <strong>RENT</strong>
               </h2>
-                <p>
+                <p style="color:black; font-family: 'Dosis'; text-align:center;">
                     Input your trip details using the rent a bike feature (online or from the app).
                 </p>
             </div>
-            <div id="rd-box">
-              <h2 style="color:black;">
-                  RIDE
+
+            <div>
+              <center>
+              <%= image_tag "bike.png", :width => "100", :height => "100"%>
+              </center>
+              <h2 style="color:black; font-family: 'Dosis'; text-align:center;">
+                  <strong>RIDE</strong>
               </h2>
-              <p>
+              <p style="color:black; font-family: 'Dosis'; text-align:center;">
                   Once the bike is unlocked, enjoy the ride!
               </p>
             </div>
+
+            <div>
+              <center>
+              <%= image_tag "bike-parking.png", :width => "100", :height => "100"%>
+              </center>
+              <h2 style="color:black; font-family: 'Dosis'; text-align:center;">
+                  <strong>RETURN</strong>
+              </h2>
+              <p style="color:black; font-family: 'Dosis'; text-align:center;">
+                  After your ride, don't forget to return your bike a Valetbike charging station.
+              </p>
+            </div>
+
+        <div class="container">
+          <center>
+          <div class="box">
+            <div class="icon"><div class="img">
+              <%= image_tag "bicycle.png", :width => "260", :height => "260"%>
+            </div>
+              </div>
+              <div class="content">
+                <h3 style="color:black; font-family: 'Dosis'; text-align:center;">
+                    <strong>JOYRIDER</strong>
+                  </h3>
+                    <p style="color:black; font-family: 'Dosis'; text-align:center;">
+                        For casual rides and day trips, on a pay per use basis.
+                    </p>
+                    <%= link_to "Select", "/checkout", :style => "font-family: 'Dosis';" %>
+                </div>
+          </div>
+
+          <div class="box">
+            <div class="icon"><div class="img">
+              <%= image_tag "suitcase.png", :width => "260", :height => "260"%>
+            </div>
+              </div>
+              <div class="content">
+                <h3 style="color:black; font-family: 'Dosis'; text-align:center;">
+                    <strong>COMMUTER</strong>
+                  </h3>
+                    <p style="color:black; font-family: 'Dosis'; text-align:center;">
+                        For regular and scheduled rides at only $25/mo. Work subsidy available.
+                    </p>
+                    <%= link_to "Select", "/checkout", :style => "font-family: 'Dosis';" %>
+                </div>
+          </div>
+
+          <div class="box">
+            <div class="icon"><div class="img">
+              <%= image_tag "home.png", :width => "260", :height => "260"%>
+            </div>
+              </div>
+              <div class="content">
+                <h3 style="color:black; font-family: 'Dosis'; text-align:center;">
+                    <strong>FAMILY</strong>
+                  </h3>
+                    <p style="color:black; font-family: 'Dosis'; text-align:center;">
+                        Add up to 5 members on a single plan for $35/mo.
+                    </p>
+                    <%= link_to "Select", "/checkout", :style => "font-family: 'Dosis';" %>
+                </div>
+          </div>
+          </center>
         </div>
-        <%= image_tag "bikePlans.jpg", :width => "1200"%>
+
         <br>
-        <%= link_to "Select a plan now!", "/checkout" %>
-    </center>
+        <%= link_to "Select a plan now!", "/checkout", :style => "font-family: 'Dosis';" %>
 </body>
 
-</html>
+  
+  
+  
+<style type="text/css">
+
+  #st-box {
+    float:left;
+    width:100%;
+    background-color:white;
+    border:solid black;
+  }
+  #nd-box {
+    float:left;
+    width:100%;
+    background-color:white;
+    border:solid black;
+    margin-left:20px;
+  }
+  #rd-box {
+    float:right;
+    width:100%;
+    background-color:white;
+    border:solid black;
+  }
+  h1 {
+    color:black;
+  }
+</style>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<center>
+  <h1 style="color:black;">
+    Enjoy the ride!
+  </h1>
+
+  <p>Find and rent an electric bike to explore the Pioneer Valley.</p>
+  <div>
+    <!-- Google Map Copied Code -->
+    <iframe src=
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d377337.08908262354!2d-72.92044538060067!3d42.36498990171473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e1188266beb0df%3A0xd3a4e0c69d6588a5!2sPioneer%20Valley%2C%20MA!5e0!3m2!1sen!2sus!4v1649028214320!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    width="100%"
+    frameborder="0"
+    style="border:0;"
+    allowfullscreen=""
+    aria-hidden="false"
+    tabindex="0">
+  </iframe>
+  <h3>HOW IT WORKS...</h3>
+</div>
+</center>
+<center>
+  <div class="container">
+    <div id="st-box">
+      <h2 style="color:black;">
+        FIND
+      </h2>
+      <p>
+        Find a station near you and select your desired bike.
+      </p>
+    </div>
+    
+    
+    
+
+    <div id="nd-box">
+      <h2 style="color:black;">
+        RENT
+      </h2>
+      <p>
+        Input your trip details using the rent a bike feature (online or from the app).
+      </p>
+    </div>
+    <div id="rd-box">
+      <h2 style="color:black;">
+        RIDE
+      </h2>
+      <p>
+        Once the bike is unlocked, enjoy the ride!
+      </p>
+    </div>
+  </div>
+  <!-- <%# <%= image_tag "bikePlans.jpg", :width => "1200"%> %> -->
+  <br>
+  <%= link_to "Select a plan now!", "/checkout" %>
+</center>

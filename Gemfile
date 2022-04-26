@@ -72,10 +72,9 @@ gem 'font-awesome-rails'
 gem 'geocoder', '~> 1.3'
 gem 'geokit-rails'
 gem 'rexml'
-
-# Suggested Potentially Useful Gems
-# gem 'devise'
-# gem 'httparty'
-# gem 'paperclip
-# gem 'uniquify'
-# gem 'will_paginate'
+# gem 'mini_magick', '~> 4.8'
+gem 'stripe', '~> 5.5.0'
+gem 'friendly_id'
+gem 'sidekiq'
+gem 'name_of_person'
+gem 'jquery-rails'

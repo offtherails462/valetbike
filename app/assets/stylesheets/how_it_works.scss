@@ -1,3 +1,170 @@
 // Place all the styles related to the how-it-works controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// Global Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//Header Content styles
+.header-content {
+  width: 100vw;
+  height: 100vh;
+  background-image: image-url('riding-bike.jpg');
+  background-position: bottom;
+  background-size: cover;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+.header-content {
+  color: whitesmoke;
+  padding-left: 2rem;
+  justify-content: center;
+}
+
+.header-content h2 {
+  font-weight: lighter;
+  margin-bottom: 30px;
+}
+
+h1 {
+  line-height: 1;
+}
+
+.line {
+  width: 30%;
+  height: 4px;
+  background: white;
+  margin: 30px 0;
+  border-radius: 5px;
+}
+
+
+//How to Use section
+.how-to-use {
+  width: 100vw;
+  margin: 20px 0;
+}
+
+.how-to-use .line {
+  width: 20%;
+  margin: 10px auto;
+  margin-bottom: 3vh;
+  background: black;
+}
+
+.how-to-use h2 {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.row {
+  flex-direction: row;
+  width: 100%;
+  margin-left: 2px;
+  padding-right: 0;
+  justify-content: center;
+}
+
+.row .col {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  border: none;
+}
+
+.card-text {
+  width: 100%
+}
+
+p {
+  margin: 10px 0;
+}
+
+//Why ValetBike section
+.why-valet {
+  width: 100vw;
+  background-color: #dbe9f4;
+  padding-bottom: 2rem;
+}
+
+.why-valet h2 {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.why-content {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  max-width: 40em;
+}
+
+.item-image {
+  max-width: 40em;
+}
+
+.why-valet .line {
+  width: 20%;
+  margin: 3vh auto;
+  background: black;
+}
+
+.why-item {
+  display: flex;
+  margin-top: 50px;
+}
+
+.item-1 {
+  flex-direction: row;
+}
+
+.item-2{
+  flex-direction: row-reverse;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-details h3 {
+  padding: 0;
+}
+
+.item-details p {
+  margin: 20px 0;
+}
+
+.item-details .btn {
+  border-radius: 15px;
+}
+
+//Closing line
+.closing {
+  width: 100vw;
+  margin-bottom: 20px;
+  padding: 2rem;
+}
+
+.closing h2 {
+  text-align: center;
+  font-size: 5vmin;
+}
+
+@media (max-width: 600){
+ .row {
+   flex-direction: column;
+   margin-right: 10vw;
+   margin-left: 10vw;
+ }
+}
