@@ -44,3 +44,7 @@ MYSQL_SOCKET=/tmp/mysql.sock (or your OS's MySQL socket file location)
 * If the user is interested, they can sign up for an account, the will remain logged-in even after closing the website unless they specifically sign out. 
 * Users can change thier password and also change thier profile.
 * If a user wants to subscribe, they can see the plans on the homepage, choose a plan and checkout on the Stripe Checkout Page.
+
+
+
+## Prototype Version
