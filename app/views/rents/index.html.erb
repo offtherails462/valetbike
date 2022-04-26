@@ -1,16 +1,31 @@
-<button type="button" class="btn btn-outline-info"><%= link_to "Back",stations_path, class: "link" %></button>
-<h1> Your Rent Record: </h1>
-
-<div class="flexbox vertical stretch">
-      <% if @rent_records.present? %>
-        <%= render(partial: "rents/row", collection: @rent_records, as: :rent) %>
-      <% else %>
-      <div class="empty">
-        No records found.
+<div class="edit-profile-form">
+  <div class="user-edit-page">
+    <div class="actions">
+      <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+        <!-- <a class="nav-link" data-toggle="pill" href="/users/edit">Edit Information</a> -->
+        <%= link_to("Account Information", users_edit_path, class: 'nav-item nav-link') %>
+        <%= link_to("Change Password", edit_password_path, class: 'nav-item nav-link') %>
+        <%= link_to("View Subscription Plan", users_view_path, class: 'nav-item nav-link') %>
+        <a class="nav-link active" data-toggle="pill" href = "#v-pills-home" role="tab" aria-selected="true">Ride History</a>
+        <a class="nav-link" data-toggle="pill">Privacy and Security</a>
       </div>
-      <% end %>
-</div>
-
-
-
+    </div>
+    <!-- Update/View user's membership plan -->
+    <div class="details tab-content">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <div class="container-2">
+          <h3>Ride History</h3>
+          <div class="flexbox vertical stretch">
+                <% if @rent_records.present? %>
+                  <%= render(partial: "rents/row", collection: @rent_records, as: :rent) %>
+                <% else %>
+                <div class="empty">
+                  No records found.
+                </div>
+                <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
