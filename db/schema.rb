@@ -24,7 +24,44 @@ ActiveRecord::Schema.define(version: 2022_04_11_212127) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+  
+  create_table "pay_charges", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_520_ci", force: :cascade do |t|
+    t.string "owner_type"
+    t.integer "owner_id"
+    t.string "processor", null: false
+    t.string "processor_id", null: false
+    t.integer "amount", null: false
+    t.integer "amount_refunded"
+    t.string "card_type"
+    t.string "card_last4"
+    t.string "card_exp_month"
+    t.string "card_exp_year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.json "data"
+    t.string "currency"
+    t.integer "application_fee_amount"
+    t.integer "pay_subscription_id"
+    t.index ["processor", "processor_id"], name: "index_pay_charges_on_processor_and_processor_id", unique: true
+  end
 
+  create_table "pay_subscriptions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_520_ci", force: :cascade do |t|
+    t.string "owner_type"
+    t.integer "owner_id"
+    t.string "name", null: false
+    t.string "processor", null: false
+    t.string "processor_id", null: false
+    t.string "processor_plan", null: false
+    t.integer "quantity", default: 1, null: false
+    t.datetime "trial_ends_at"
+    t.datetime "ends_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "status"
+    t.json "data"
+    t.decimal "application_fee_percent", precision: 8, scale: 2
+    t.index ["processor", "processor_id"], name: "index_pay_subscriptions_on_processor_and_processor_id", unique: true
+  end
   create_table "rents", charset: "utf8mb4", collation: "utf8mb4_unicode_520_ci", force: :cascade do |t|
     t.integer "bike_id"
     t.datetime "created_at", precision: 6, null: false
@@ -57,6 +94,16 @@ ActiveRecord::Schema.define(version: 2022_04_11_212127) do
     t.boolean "admin?", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "processor"
+    t.string "processor_id"
+    t.json "pay_data"
+    t.datetime "trial_ends_at"
+    t.string "card_type"
+    t.string "card_last4"
+    t.string "card_exp_month"
+    t.string "card_exp_year"
+    t.text "extra_billing_info"
+    t.string "stripe_customer_id"
   end
 
 end

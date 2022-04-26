@@ -39,10 +39,10 @@ Rails.application.routes.draw do
   get 'stations', to: 'stations#index'
   get 'search', to: 'stations#search'
 
-  get 'checkout', to: 'checkouts#show'
-  post 'checkout', to: 'checkouts#show'
+  get 'checkouts', to: 'checkouts#index'
 
   resource :rents
   #resource :stations
   #resource :bikes
 end
+

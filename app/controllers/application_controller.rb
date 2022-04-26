@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user_subscribed!
-    redirect_to checkout_path, alert: 'Oops. You must be have a subsription to be able to rent and return a bike! Choose a subscription please.' if Current.user.subscription_type.nil?
+    redirect_to checkout_path, alert: 'Oops! You must be have a subscription to be able to rent and return a bike.' if Current.user.subscription_type.nil?
   end
 end
