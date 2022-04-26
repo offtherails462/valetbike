@@ -28,10 +28,5 @@ Rails.application.routes.draw do
 
   get 'stations', to: 'stations#index'
 
-
-  #resource :stations
-  #resource :bikes
-
   get 'checkouts', to: 'checkouts#index'
-  
 end
